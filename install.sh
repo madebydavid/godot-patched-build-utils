@@ -19,8 +19,6 @@ originalVersion="${major}.${minor}.$((patch - 1))"
 commitHash="$(git -C "$godotDir" rev-parse --short HEAD)"
 
 binDir="${godotDir}/bin"
-[[ -d "$binDir" ]] || { echo "Error: ${binDir} does not exist. Run ./build.sh first."; exit 1; }
-[[ -e "$binDir"/* ]] || { echo "Error: No files found in ${binDir}. Run ./build.sh first."; exit 1; }
 
 newGodotDir="/opt/godot/godot-${newVersion}-${commitHash}-sc"
 originalGodotDir="/opt/godot/godot-${originalVersion}-sc"
